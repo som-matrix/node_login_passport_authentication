@@ -1,0 +1,45 @@
+.container{
+    min-height: 100vh;
+    width:100%;
+    position:relative;
+}
+.container-sub{
+    height:100vh;
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size:2rem;
+    font-weight:400;
+    color:#333;
+    text-align: center;
+}
+p{
+    font-size:1.5rem;
+    font-weight:300;
+    color:#333; 
+    margin-top:1rem;
+    text-align: center;
+}
+a{
+    text-decoration:none;
+    font-size:1.5rem;
+    font-weight:300;
+    color:#333; 
+}
+button {
+    outline: none;
+    border: none;
+    background: rgb(232, 69, 69);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: background .3s;
+}
+
+button:hover{
+    background: rgba(232, 69, 69,0.9);
+  }

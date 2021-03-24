@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/styles/message.css" type="text/css" />
+<% if(typeof errors != 'undefined') { %> 
+    <div class="message">
+      <% errors.forEach(function(error){ %>
+       <div class="message-box">
+        <%= error.msg %>
+       </div>
+      <% }); %> 
+    </div>
+<% } %>
+<% if (success_msg != '') { %>
+   <div class="message">
+     <div class="message-box message-success">
+       <%= success_msg %>
+     </div>
+   </div>
+<% } %>
+<% if (error_msg != '') { %>
+  <div class="message">
+    <div class="message-box message-failure">
+      <%= error_msg %>
+    </div>
+  </div>
+<% } %>
+<% if (error != '') { %>
+  <div class="message">
+    <div class="message-box message-failure">
+      <%= error %>
+    </div>
+  </div>
+<% } %>
+<script>
+  let message = document.querySelector('.message')
+  message.addEventListener('click',(e)=>{
+     message.style.display = 'none'
+  })
+</script>

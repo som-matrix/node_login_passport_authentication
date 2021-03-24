@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/styles/login.css" type="text/css">
+<div class="container">
+    <div class="container-sub">
+      <%- include ('./partials/message.ejs'); %>
+      <div class="flex">
+        <form action="/users/login" method="post">
+           <div class="form">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                class="form-input"
+                value="<%= typeof email != 'undefined' ? email: " "%>"
+              />
+            </div>
+            <div class="form">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                class="form-input"
+                value="<%= typeof password != 'undefined' ? password: ""%>"
+              />
+            </div>
+            <div class="login">
+                <h2>Not yet Registered ?</h2>
+                <a href="/users/register">Register</a>
+            </div>
+            <button type="submit">
+                Login
+            </button>
+         </form>
+         <div class="login-image">
+            <img src="/assets/log-in.png" alt="log-in" type="image/png">
+         </div>
+      </div>
+    </div>
+  </div>
