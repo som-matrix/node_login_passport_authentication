@@ -18,10 +18,12 @@ mongoose.connect(dataBase,{useNewUrlParser:true, useUnifiedTopology:true})
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 // Global vars
+app.set('trust proxy', 1)
 app.use(session({
     secret:'secret',
     resave:true,
-    saveUninitialized:true
+    saveUninitialized:true,
+    cookie:{secure:true}
 }))
 // Passport Middleware
 app.use(passport.initialize())
