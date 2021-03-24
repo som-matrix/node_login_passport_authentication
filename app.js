@@ -26,12 +26,12 @@ app.use(session({
     secret:'secret',
     store:MongoStore.create({
         mongoUrl: `mongodb+srv://satya:${process.env.DB_PASSWORD}@cluster1.axlso.mongodb.net/Cluster1?retryWrites=true&w=majority`,
-        
+
     }),
     resave:true,
     saveUninitialized:true,
     cookie:{
-        maxAge: process.env.SESSION_LIFETIME,
+        maxAge: Number(process.env.SESSION_LIFETIME),
         sameSite: true,
         secure: process.env.IN_PRODUCTION
     }
