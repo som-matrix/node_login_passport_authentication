@@ -24,10 +24,10 @@ app.set('trust proxy', 1)
 app.use(session({
     // name:process.env.SESSION_NAME,
     secret:'secret',
-    // store:MongoStore.create({
-    //     mongoUrl: `mongodb+srv://satya:${process.env.DB_PASSWORD}@cluster1.axlso.mongodb.net/Cluster1?retryWrites=true&w=majority`,
+    store:MongoStore.create({
+        mongoUrl: `mongodb+srv://satya:${process.env.DB_PASSWORD}@cluster1.axlso.mongodb.net/Cluster1?retryWrites=true&w=majority`,
 
-    // }),
+    }),
     resave:true,
     saveUninitialized:true,
     // cookie:{
