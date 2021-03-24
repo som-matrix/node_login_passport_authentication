@@ -22,19 +22,19 @@ app.set('view engine', 'ejs')
 // Global vars
 app.set('trust proxy', 1)
 app.use(session({
-    name:process.env.SESSION_NAME,
+    // name:process.env.SESSION_NAME,
     secret:'secret',
-    store:MongoStore.create({
-        mongoUrl: `mongodb+srv://satya:${process.env.DB_PASSWORD}@cluster1.axlso.mongodb.net/Cluster1?retryWrites=true&w=majority`,
+    // store:MongoStore.create({
+    //     mongoUrl: `mongodb+srv://satya:${process.env.DB_PASSWORD}@cluster1.axlso.mongodb.net/Cluster1?retryWrites=true&w=majority`,
 
-    }),
+    // }),
     resave:true,
     saveUninitialized:true,
-    cookie:{
-        maxAge: Number(process.env.SESSION_LIFETIME),
-        sameSite: true,
-        secure: process.env.IN_PRODUCTION
-    }
+    // cookie:{
+    //     maxAge: Number(process.env.SESSION_LIFETIME),
+    //     sameSite: true,
+    //     secure: process.env.IN_PRODUCTION
+    // }
 }))
 // Passport Middleware
 app.use(passport.initialize())
